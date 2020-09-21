@@ -63,6 +63,10 @@ const field = {
         width: '100%',
         border: '0 solid',
         borderBottom: '2px solid #023e8a',
+       
+    },
+    "&:disabled":{
+        background: 'red'
     }, 
     label:{
         margin: '10px'
@@ -80,8 +84,10 @@ const footer = {
         padding: '5px',
         textTransform: 'uppercase',
         border:'2px solid #00b4d8',
-        borderRadius: '5px'
-        
+        borderRadius: '5px',
+        "&:disabled":{
+            backgroundColor: 'red'
+        },
     }
 }
 export default Form;

@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+input[type="text"]:disabled {
+  background: #dddddd;
+}

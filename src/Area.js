@@ -10,8 +10,8 @@ const Area= () =>{
 
     return(
         <div>
-            AREA 
-            <table>
+             
+            <table style={table}>
                 <thead>
                     <tr>
                         <th>Ponto</th>
@@ -34,5 +34,8 @@ const Area= () =>{
             
         </div>
     )
+}
+const table = {
+    width: '100%',
 }
 export default Area;
