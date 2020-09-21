@@ -14,9 +14,32 @@ code {
 }
 input:disabled {
   background: gray;
+  margin: '10px';
+  width: '100%';
 }
 
 button:disabled {
   background-color: gray !important;  
   border: 1px solid gray !important;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 95%;
+  border-radius: 5px;
+  padding-bottom: 40px;
+  padding-right: 20px;
+  margin-bottom: 40px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.container {
+  padding: 2px 16px;
 }

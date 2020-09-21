@@ -24,7 +24,7 @@ const Form = () =>{
   
     return(
 
-        <form onSubmit={handleSubmit(onSubmit)} style={form}>        
+        <form className="card" onSubmit={handleSubmit(onSubmit)} style={form}>        
             <div style={field}>
                 <label style={field.label} htmlFor="">Nome da area</label>
                 <input disabled={points.length ===0} name="name" style={field.input} ref={register} />
@@ -61,13 +61,11 @@ const field = {
     input: {
         margin: '10px',
         width: '100%',
-        border: '0 solid',
+        border: '0',
         borderBottom: '2px solid #023e8a',
        
     },
-    "&:disabled":{
-        background: 'red'
-    }, 
+ 
     label:{
         margin: '10px'
     }
