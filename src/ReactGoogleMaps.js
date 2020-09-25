@@ -1,11 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState,  useEffect, useRef} from 'react'
 import { GoogleMap, LoadScript, DrawingManager  } from '@react-google-maps/api';
 import { useDispatch } from 'react-redux'
 
 import { actions } from './redux/actions'
 
+
 const containerStyle = {
-  height: '600px',
+  
+  height: 'calc(100vh - 180px)',
   minWidth: '100%',
 };
 
@@ -16,12 +18,15 @@ const center = {
 
 
 const MyComponent = () => {
+  
     const onLoad = drawingManager => {
        // console.log(drawingManager)
     }
     const [coords, updateTask] = useState([])
     const dispatch = useDispatch()
     
+   
+
     const onPolygonComplete = polygon => {
         
         let path        = polygon.getPath();
@@ -38,6 +43,7 @@ const MyComponent = () => {
     
 
   return (
+   
     <LoadScript
       googleMapsApiKey="AIzaSyBReiWoWGKxq1_9cGgP0HG0S2BfTQIGzaY"
       libraries={["drawing"]}
@@ -54,6 +60,7 @@ const MyComponent = () => {
         <></>
       </GoogleMap>
     </LoadScript>
+   
   )
 }
 
