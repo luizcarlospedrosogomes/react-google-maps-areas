@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { actions } from './redux/actions'
 
 const containerStyle = {
-  height: '900px',
+  height: '600px',
   minWidth: '100%',
 };
 
