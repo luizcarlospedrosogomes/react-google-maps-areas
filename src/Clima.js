@@ -7,9 +7,7 @@ import { selectors } from './redux/selectors'
 import { actions } from './redux/actions'
 import lottie from './lotties/lottie'
 
-const key = '3cf283fe'
-
-
+const key = '2023fee7'
 
 const Clima = () => {
     const dispatch  = useDispatch()
