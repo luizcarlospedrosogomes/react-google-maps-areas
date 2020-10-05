@@ -7,7 +7,7 @@ import { selectors } from './redux/selectors'
 import { actions } from './redux/actions'
 import lottie from './lotties/lottie'
 
-const key = 'b26e6490'
+const key = '3cf283fe'
 
 
 
