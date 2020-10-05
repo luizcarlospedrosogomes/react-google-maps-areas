@@ -1,25 +1,46 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+
+import {useFetch} from './hooks/useFetch'
+import { selectors } from './redux/selectors'
+import { actions } from './redux/actions'
+
+const key = 'b26e6490'
 
 const Clima = () => {
+    const dispatch  = useDispatch()
+    const areas     = useSelector(selectors.getTasks)  
+     
+    const lat       = (areas.length > 0 ? areas[areas.length-1].lat : null)    
+    const lng       = (areas.length > 0 ? areas[areas.length-1].lng : null)    
+    
+    
+    const {data}    = useFetch(`weather?key=${key}&format=json-cors&lat=${lat}&lon=${lng}&user_ip=remote`);
+
+    if(!data){
+        return <p>Obtendo dados do clima da região</p>
+    }
+    if(areas.length === 0){
+        return <p>Selecione uma area para obter dados climaticos</p>;
+    }
+
+    const {results}  = data
+    const {forecast} = results
+    dispatch(actions.addTemp(data))
+
     return (
-        <div style={clima}> 
-            <div className="card-clima" style={card_clima}>
-                <div className="header" style={header}>05/10/2020</div>
-                <div className="body" style={body}>CHUVOSO</div>
-                <div className="footer" style={footer}>MIN: 12°C MAX: 15°C</div>
-            </div>
-            <div style={card_clima}>
-                <div className="header" style={header}>05/10/2020</div>
-                <div className="body" style={body}>CHUVOSO</div>
-                <div className="footer" style={footer}>MIN: 12°C MAX: 15°C</div>
-            </div>
-            <div style={card_clima}>
-                <div className="header" style={header}>05/10/2020</div>
-                <div className="body" style={body}>CHUVOSO</div>
-                <div className="footer" style={footer}>MIN: 12°C MAX: 15°C</div>
-            </div>
-          
-        </div> 
+        <>        
+        <div  style={clima}> 
+            
+            {forecast.map((climate, i )=>(
+                <div key={i} className="card-clima" style={card_clima}>
+                    <div className="header" style={header}>{climate.date}</div>
+                    <div className="body" style={body}>{climate.description}</div>
+                    <div className="footer" style={footer}>MIN: {climate.min}°C MAX: {climate.max}°C</div>
+               </div>
+            ))}
+        </div>
+        </>
     )
 }
 
@@ -55,7 +76,8 @@ const body = {
 
 const footer = {
     border: '1px solid blue',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    fontSize: '10px'
 }
 
 export default Clima;

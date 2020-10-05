@@ -8,13 +8,12 @@ import { selectors } from './redux/selectors'
 
 const Form = () =>{
     const [dados, updateArea]       = useState([])    
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
 
     const dispatch = useDispatch()
     const points   = useSelector(selectors.getTasks)
     
-    const onSubmit = data => {
-        console.log(dados)
+    const onSubmit = data => {        
         dados.push({local: data, points: points})
         dispatch(actions.addArea(dados))
         updateArea([])
@@ -34,16 +33,11 @@ const Form = () =>{
                 <label style={field.label} htmlFor="">Cultura</label>
                 <input disabled={points.length ===0} name="culture" style={field.input} ref={register}/>
             </div>
-            <div>
-                <ul>
-                    {points.map((t, i) => (
-                        <li key={i}> {i+1} - lat: {t.lat} - lng: {t.lng}</li>
-                    ))}
-                </ul>
-            </div>
+            
             <div style={footer}>
                 <button style={footer.button} disabled={points.length ===0}>Salvar area</button>
             </div>
+            
             {errors.exampleRequired && <span>This field is required</span>}
         </form>  
 

@@ -6,8 +6,7 @@ import { selectors } from './redux/selectors'
 const Area= () =>{
     
     const areas = useSelector(selectors.getAreas)
-    console.log(areas)
-
+    
     return(
         <div>
              

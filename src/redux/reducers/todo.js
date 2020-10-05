@@ -14,10 +14,14 @@ const areas = handleActions({
     ]
 }, [])
 
+const temp = handleActions({
+  [actions.addTemp]: (state = 0, action) => action.payload
+}, [])
 
 const reducers = combineReducers({
   tasks,
   areas,
+  temp,
 })
 
 export { reducers }

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import ReactGoogleMaps from './ReactGoogleMaps'
-import Form from './Form'
-import Area from './Area'
+
+import City from './City'
 import Clima from './Clima'
 
 const containerStyle = {   
@@ -30,8 +30,8 @@ const App = () =>{
             <ReactGoogleMaps/>
         </div>
         <div style={form}>
-            <Form/>
-            <Area/>
+            <City/>
+
         </div>
         
       </div>  

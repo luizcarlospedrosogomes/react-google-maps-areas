@@ -10,9 +10,14 @@ const getAreas = createSelector(
   areas => areas,
 )
 
+const getTemp = createSelector(
+  state => state.todoReducers.temp,
+  temp => temp,
+)
 const selectors = {
   getTasks,
   getAreas,
+  getTemp,
 }
 
 export { selectors }
