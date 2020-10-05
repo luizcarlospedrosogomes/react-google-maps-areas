@@ -13,6 +13,7 @@
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
     "react-hook-form": "^6.8.3",
+    "react-lottie": "^1.2.3",
     "react-redux": "^7.2.1",
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",

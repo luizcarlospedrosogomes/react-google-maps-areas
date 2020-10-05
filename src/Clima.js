@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 
+
 import {useFetch} from './hooks/useFetch'
 import { selectors } from './redux/selectors'
 import { actions } from './redux/actions'
+import lottie from './lotties/lottie'
 
 const key = 'b26e6490'
+
+
 
 const Clima = () => {
     const dispatch  = useDispatch()
     const areas     = useSelector(selectors.getTasks)  
      
+   
+    
     const lat       = (areas.length > 0 ? areas[areas.length-1].lat : null)    
     const lng       = (areas.length > 0 ? areas[areas.length-1].lng : null)    
     
@@ -35,7 +41,9 @@ const Clima = () => {
             {forecast.map((climate, i )=>(
                 <div key={i} className="card-clima" style={card_clima}>
                     <div className="header" style={header}>{climate.date}</div>
-                    <div className="body" style={body}>{climate.description}</div>
+                    <div className="body" style={body}>
+                        {lottie(climate.condition)}
+                    </div>
                     <div className="footer" style={footer}>MIN: {climate.min}°C MAX: {climate.max}°C</div>
                </div>
             ))}
