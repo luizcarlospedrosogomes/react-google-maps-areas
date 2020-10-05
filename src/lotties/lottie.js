@@ -19,6 +19,7 @@ const iconConditions = (condition) => {
     };
     switch (condition) {
         case "storm":
+        case "rain":
             defaultOptions.animationData = storm
         break;
         case "clear_day":
