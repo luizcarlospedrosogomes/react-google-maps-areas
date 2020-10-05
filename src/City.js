@@ -13,7 +13,7 @@ const City = () =>{
     if(!data.valid_key){
         return <p>Chave da API HG weather invalida</p>
     }
-    console.log(data)
+    
     return(
         <>
         <div className="card" style={city}>            

@@ -41,7 +41,7 @@ const iconConditions = (condition) => {
         default:
             break;
    }
-   console.log(defaultOptions)
+   
    return    <Lottie options={defaultOptions}   width={50} height={50}/>  
 }
 
