@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ReactGoogleMaps from './ReactGoogleMaps'
+import ReactGoogleMaps from './maps/ReactGoogleMaps'
 
 import City from './City'
 import Clima from './Clima'

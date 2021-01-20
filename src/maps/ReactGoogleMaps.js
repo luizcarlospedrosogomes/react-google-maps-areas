@@ -2,7 +2,7 @@ import React, {useState,  useEffect, useRef} from 'react'
 import { GoogleMap, LoadScript, DrawingManager  } from '@react-google-maps/api';
 import { useDispatch } from 'react-redux'
 
-import { actions } from './redux/actions'
+import { actions } from '../redux/actions'
 
 
 const containerStyle = {
@@ -51,7 +51,7 @@ const MyComponent = () => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={18}
+        zoom={8}
       >
         <DrawingManager
             onLoad={onLoad}
